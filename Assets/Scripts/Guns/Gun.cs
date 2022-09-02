@@ -65,17 +65,61 @@ public abstract class Gun : MonoBehaviour
         private void Update()
         {
             timeSinceLastFired += Time.deltaTime;
-            UserInput();
         }
 
+        public void PlayerInput(string fireButton)
+        {
+            if (!usePlayerInput) return;
+            
+            switch (currentFireMode)
+            {
+                case FireMode.Auto:
+                    if (Input.GetButtonDown(fireButton))
+                    {
+                        if (!AttemptFireWeapon())
+                        {
+                            print("cannot fire weapon!");
+                            return;
+                        }
+                    }
+                    
+                    if (Input.GetButton(fireButton) && timeSinceLastFired >= FireRate)
+                    {
+                        FireWeapon();
+                    }
+
+                    break;
+                case FireMode.Semi:
+                    if (Input.GetButtonDown(fireButton) && timeSinceLastFired >= FireRate)
+                    {
+                        if (!AttemptFireWeapon())
+                        {
+                            print("cannot fire weapon!");
+                            return;
+                        }
+
+                        FireWeapon();
+                    }
+
+                    break;
+                case FireMode.Safe:
+                    print("its safe !!");
+                    break;
+                case FireMode.None:
+                    Debug.LogError(
+                        $"Firingmode is set to none in class {GetType().Name} in gameobject '{gameObject.name}'!");
+                    break;
+            }
+        }
+        
         private void UserInput()
         {
             if (!usePlayerInput) return;
             
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Reload();
-            }
+            //if (Input.GetKeyDown(KeyCode.R))
+            //{
+            //    Reload();
+            //}
 
             switch (currentFireMode)
             {
@@ -150,9 +194,10 @@ public abstract class Gun : MonoBehaviour
 
         protected void Shoot()
         {
+            //Fix this
             Instantiate(test, transform.position,
                 Quaternion.Euler(transform.rotation.eulerAngles +
-                new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized * spread));
+                new Vector3(0, 0, UnityEngine.Random.Range(-1f, 1f)).normalized * spread));
         }
 
         public void SetFireMode(FireMode fm)

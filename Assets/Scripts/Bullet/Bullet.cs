@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,11 @@ public class Bullet : Entity
         shotBy = whoShotMe;
     }
 
+    private void Awake()
+    {
+        
+    }
+
     private void Update()
     {
         transform.position += transform.right * speed * Time.deltaTime;
@@ -22,9 +28,7 @@ public class Bullet : Entity
     {
         if (other.GetComponent<Health>() == null) return;
         if (!other.GetComponent<Entity>().hostile && !this.hostile) return;
-        
-        print(other.name);
-        
+
         other.GetComponent<Health>().TakeDamage(damage, shotBy);
     }
 }

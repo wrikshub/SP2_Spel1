@@ -11,15 +11,22 @@ public class PlayerController : Entity
     private Camera camera = null;
     [SerializeField] private float speedlimit = 10f;
     [SerializeField] private float moveSpeed = 10f;
-    [SerializeField] private Rigidbody2D rbod;
+    public bool freezeMovement { private set; get; }
     
     private void Awake()
     {
         camera = Camera.main;
     }
 
+    private void Start()
+    {
+        FreezePlayer(false);
+    }
+
     private void Update()
     {
+        if (freezeMovement == true) return;
+        
         MovePlayer();
         Aim();
         
@@ -60,8 +67,8 @@ public class PlayerController : Entity
         }
     }
 
-    public void ApplyKnockback(Vector2 dir)
+    public void FreezePlayer(bool freeze)
     {
-        rbod.AddForce(dir, ForceMode2D.Impulse);
+        freezeMovement = freeze;
     }
 }
