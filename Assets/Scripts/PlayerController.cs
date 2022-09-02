@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerController : Entity
 {
-    private Vector2 pInput;
+    private Vector2 pInput = Vector2.zero;
     public float MouseAngle { private set; get; }
     public float PSpeedRatio { get; private set; }
-    private Camera camera;
+    private Camera camera = null;
     [SerializeField] private float speedlimit = 10f;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private Rigidbody2D rbod;
@@ -25,16 +25,16 @@ public class PlayerController : Entity
         
         PSpeedRatio = (rbod.velocity.magnitude) / (speedlimit * speedlimit);
         PSpeedRatio = Mathf.Clamp01(PSpeedRatio);
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             pInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
             Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
             Vector3 relativeMousePos = mousePos - transform.position;
-            ApplyKnockback(relativeMousePos.normalized * 10f);
+            ApplyKnockback(relativeMousePos.normalized * -10f);
         }
     }
-
+    
     private void Aim()
     {
         Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);

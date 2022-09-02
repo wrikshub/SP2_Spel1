@@ -5,5 +5,5 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     [SerializeField] private string entityName = "Bob Odenkirk";
-    [SerializeField] private bool hostile = true;
+    [SerializeField] public bool hostile = true;
 }
