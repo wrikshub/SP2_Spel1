@@ -11,7 +11,6 @@ public class PlayerController : Entity
     private Camera camera = null;
     [SerializeField] private float speedlimit = 10f;
     [SerializeField] private float moveSpeed = 10f;
-    public bool freezeMovement { private set; get; }
     
     private void Awake()
     {
@@ -20,12 +19,12 @@ public class PlayerController : Entity
 
     private void Start()
     {
-        FreezePlayer(false);
+        FreezeEntity(false);
     }
 
     private void Update()
     {
-        if (freezeMovement == true) return;
+        if (FreezeMovement == true) return;
         
         MovePlayer();
         Aim();
@@ -33,6 +32,7 @@ public class PlayerController : Entity
         PSpeedRatio = (rbod.velocity.magnitude) / (speedlimit * speedlimit);
         PSpeedRatio = Mathf.Clamp01(PSpeedRatio);
 
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             pInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
@@ -40,6 +40,7 @@ public class PlayerController : Entity
             Vector3 relativeMousePos = mousePos - transform.position;
             ApplyKnockback(relativeMousePos.normalized * -10f);
         }
+        */
     }
     
     private void Aim()
@@ -65,10 +66,5 @@ public class PlayerController : Entity
         {
             rbod.AddForce(pInput * (diff * Time.deltaTime), ForceMode2D.Impulse);
         }
-    }
-
-    public void FreezePlayer(bool freeze)
-    {
-        freezeMovement = freeze;
     }
 }

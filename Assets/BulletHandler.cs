@@ -12,7 +12,7 @@ public class BulletHandler : MonoBehaviour
 
     private void Awake()
     {
-        DestroyBullet(5f);
+        RemoveBullet(5f);
     }
 
     private void Update()
@@ -27,9 +27,14 @@ public class BulletHandler : MonoBehaviour
 
     public void DestroyBullet(float time)
     {
+        bulletTrail.transform.parent = transform;
         timerLimit = time;
         Destroy(transform.GetChild(0).gameObject, time);
         Destroy(gameObject, time + 5f);
     }
-    
+
+    private void RemoveBullet(float time)
+    {
+        Destroy(gameObject, time);
+    }
 }

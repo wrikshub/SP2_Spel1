@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usePlayerInput: 1
-  test: {fileID: 2129188674124931162, guid: 520c7d8bb74b0c543b1f5633f0de8b5c, type: 3}
+  test: {fileID: 3226757386561911995, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
   AllowedFiringModes: 00000000
   totalAmmo: 75
   magSize: 25
   infiniteAmmo: 1
-  spread: 0.1
+  spread: 0
+  knockback: 1.5
   _fireRate: 0.125

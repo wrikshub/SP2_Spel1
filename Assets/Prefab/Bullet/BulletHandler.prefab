@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 51426610680511390}
   - component: {fileID: 51426610680511389}
   - component: {fileID: 7510546158550563166}
+  - component: {fileID: 862183132549352250}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -67,6 +68,7 @@ MonoBehaviour:
   entityName: Bullet
   hostile: 0
   rbod: {fileID: 7510546158550563166}
+  health: {fileID: 0}
   damage: 25
   speed: 100
 --- !u!50 &7510546158550563166
@@ -90,6 +92,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &862183132549352250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51426610680511385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3cf2afcadc39ed4faf81a9fe8911662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
 --- !u!1 &2106226585437363436
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,23 +326,14 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.26606876
       - serializedVersion: 3
-        time: 0.8879236
-        value: 1.050383
+        time: 1
+        value: 0
         inSlope: -1.478386
         outSlope: -1.478386
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 1
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: -16.30468
-        outSlope: -16.30468
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.24673541
-        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

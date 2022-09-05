@@ -6329,25 +6329,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299731671}
     m_Modifications:
-    - target: {fileID: -4968189296259954625, guid: 24fc2d80aa3516c4eae8b691b92a646e, type: 3}
-      propertyPath: test
-      value: 
-      objectReference: {fileID: 3226757386561911995, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
-    - target: {fileID: -4968189296259954625, guid: 24fc2d80aa3516c4eae8b691b92a646e, type: 3}
-      propertyPath: spread
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4968189296259954625, guid: 24fc2d80aa3516c4eae8b691b92a646e, type: 3}
-      propertyPath: usePlayerInput
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 122578191508554418, guid: 24fc2d80aa3516c4eae8b691b92a646e, type: 3}
       propertyPath: m_Name
       value: SMG
-      objectReference: {fileID: 0}
-    - target: {fileID: 122578191508554418, guid: 24fc2d80aa3516c4eae8b691b92a646e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7164571589082158790, guid: 24fc2d80aa3516c4eae8b691b92a646e, type: 3}
       propertyPath: m_RootOrder
@@ -6866,6 +6850,7 @@ MonoBehaviour:
   entityName: Player
   hostile: 0
   rbod: {fileID: 1890328576}
+  health: {fileID: 0}
   speedlimit: 4.5
   moveSpeed: 60
 --- !u!4 &1890328578
@@ -6932,7 +6917,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunHolder: {fileID: 1299731670}
-  pCont: {fileID: 1890328577}
+  entity: {fileID: 1890328577}
+  effects: {fileID: 0}
 --- !u!1 &2020761015
 GameObject:
   m_ObjectHideFlags: 0
@@ -7013,6 +6999,7 @@ MonoBehaviour:
   entityName: Bob Odenkirk
   hostile: 1
   rbod: {fileID: 2051834549}
+  health: {fileID: 0}
 --- !u!4 &2051834547
 Transform:
   m_ObjectHideFlags: 0

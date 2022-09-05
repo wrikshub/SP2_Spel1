@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Bullet : Entity
 {
+    private BulletHandler bh;
     private Entity shotBy = null;
     [SerializeField] protected float damage = 10f;
     [SerializeField] protected float speed = 1f;
@@ -16,7 +17,7 @@ public class Bullet : Entity
 
     private void Awake()
     {
-        
+        bh = GetComponentInParent<BulletHandler>();
     }
 
     private void Update()
@@ -28,7 +29,9 @@ public class Bullet : Entity
     {
         if (other.GetComponent<Health>() == null) return;
         if (!other.GetComponent<Entity>().hostile && !this.hostile) return;
-
+        
+        bh.DestroyBullet(0);
+        
         other.GetComponent<Health>().TakeDamage(damage, shotBy);
     }
 }
