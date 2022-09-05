@@ -11,6 +11,7 @@ public class PlayerVisual : MonoBehaviour
     [SerializeField] private Rigidbody2D rbod;
     [SerializeField] private Transform visualDir;
     [SerializeField] private Transform visualAim;
+    [SerializeField] private CameraShake cs;
     private float dirVel;
     private float cameraZoomVel;
     private float lookVel;
@@ -19,6 +20,7 @@ public class PlayerVisual : MonoBehaviour
     [Range(0,1)][SerializeField] private float cameraZoomDamp = 0.5f;
     [Range(0,1)][SerializeField] private float lookDamp = 0.5f;
     [Range(0, 5)][SerializeField] private float cameraZoomAmount = 2;
+    [Range(0, 5)] [SerializeField] private float cameraShakeWhileMoving = 1f;
 
     private void Awake()
     {

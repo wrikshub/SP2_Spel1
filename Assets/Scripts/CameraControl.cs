@@ -7,6 +7,7 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera vcam;
+    [SerializeField] private CinemachineImpulseSource impulseSource;
     public float CameraSize { get; private set; }
 
     private void Start()
