@@ -12,9 +12,11 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private GameObject scorePopUp = null;
     [SerializeField] private Vector2 spawnLocation = Vector2.zero;
     [SerializeField] private Vector2 randomBetween = Vector2.one;
+    [SerializeField] private Animator anim;
+    [SerializeField] private string scoreParam = "increasedScore";
     private Canvas canvas;
     
-    private void Awake()
+    private void Start()
     {
         canvas = GetComponentInChildren<Canvas>();
         score = ScoreManager.Instance;
@@ -28,6 +30,8 @@ public class HUDManager : MonoBehaviour
 
     private void ScoreReceived(int amount)
     {
+        anim.SetTrigger(scoreParam);
+        
         //var inst = Instantiate(scorePopUp, spawnLocation, quaternion.identity, canvas.transform);
         //inst.GetComponent<TextMeshPro>().text = amount.ToString();
         //Destroy(inst, 2);

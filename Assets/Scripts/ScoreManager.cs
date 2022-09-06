@@ -7,9 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public int Score { get; private set; }
     public static ScoreManager Instance { get; private set; }
-
     public event UpdateScore OnUpdateScore;
-
     public delegate void UpdateScore(int amount);
 
     private void Awake()
