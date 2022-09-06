@@ -9,6 +9,8 @@ public class Bullet : Entity
     private Entity shotBy = null;
     [SerializeField] protected float damage = 10f;
     [SerializeField] protected float speed = 1f;
+    [SerializeField] private LayerMask layer;
+    [SerializeField] private GameObject hitEffect = null;
 
     private void Awake()
     {
@@ -28,6 +30,14 @@ public class Bullet : Entity
         bh.DestroyBullet(0);
         
         other.GetComponent<Health>().TakeDamage(damage, shotBy);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if ((other.gameObject.layer | (1 << layer)) == layer)
+        {
+            bh.DestroyBullet(0);
+        }
     }
 
     public void InitBullet(Entity whoShotMe)

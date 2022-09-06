@@ -20,10 +20,11 @@ public class PlayerVisual : MonoBehaviour
     [Range(0,1)][SerializeField] private float cameraZoomDamp = 0.5f;
     [Range(0,1)][SerializeField] private float lookDamp = 0.5f;
     [Range(0, 5)][SerializeField] private float cameraZoomAmount = 2;
-    [Range(0, 5)] [SerializeField] private float cameraShakeWhileMoving = 1f;
 
-    private void Awake()
+
+    private void Start()
     {
+        cCont = Camera.main.GetComponent<CameraControl>();
         camZoomCurrent = cCont.CameraSize;
     }
 

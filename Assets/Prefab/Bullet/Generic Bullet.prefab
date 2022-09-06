@@ -71,6 +71,10 @@ MonoBehaviour:
   health: {fileID: 862183132549352250}
   damage: 10
   speed: 25
+  layer:
+    serializedVersion: 2
+    m_Bits: 64
+  hitEffect: {fileID: 0}
 --- !u!50 &7510546158550563166
 Rigidbody2D:
   serializedVersion: 4
@@ -157,7 +161,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e0339b6ef1faab941ad8b6ad5c2eef4b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
