@@ -7,34 +7,35 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     [SerializeField] private GameObject gunHolder = null;
-    [SerializeField] private Entity entity = null;
-    [SerializeField] private CinemachineImpulseSource impulse;
-    private Gun gun;
-    [SerializeField] private Effects effects;
+    [SerializeField] private Entity whoHoldsMe = null;
+    private Weapon gun;
+    [SerializeField] private string fireButton = "Fire1";
     
     private void Start()
     {
-        gun = gunHolder.transform.GetComponentInChildren<Gun>();
-        gun.GunFired += OnFireKnockback;
+        //make this dynamic
+        gun = gunHolder.transform.GetComponentInChildren<Weapon>();
+        gun.OnFire += OnFireKnockback;
     }
-    
-    private void OnDisable()
+
+    private void OnDestroy()
     {
-        gun.GunFired -= OnFireKnockback;
+        gun.OnFire -= OnFireKnockback;
     }
-    
+
     private void Update()
     {
-        if (entity.FreezeMovement) return;
+        if (whoHoldsMe.FreezeMovement) return;
         //effects.SpawnEffect(Vector3.zero, transform.localRotation.eulerAngles.z, 1);
-        gun.PlayerInput("Fire1");
+        if(Input.GetButton(fireButton))
+            gun.Fire();
         
     }
 
-    private void OnFireKnockback(object sender, GunEventArgs g)
+    private void OnFireKnockback(object sender, WeaponArgs args)
     {
-        impulse.GenerateImpulse(-gunHolder.transform.right * g.KnockBack);
+        //impulse.GenerateImpulse(-gunHolder.transform.right * knockback);
         //impulse.GenerateImpulseAt(transform.position, -gunHolder.transform.right * g.KnockBack * 100);
-        entity.ApplyKnockback(-gunHolder.transform.right, g.KnockBack);
+        whoHoldsMe.ApplyKnockback(-gunHolder.transform.right, args.knockbackAmount);
     }
 }

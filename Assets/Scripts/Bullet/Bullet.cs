@@ -9,11 +9,6 @@ public class Bullet : Entity
     private Entity shotBy = null;
     [SerializeField] protected float damage = 10f;
     [SerializeField] protected float speed = 1f;
-    
-    protected Bullet(Entity whoShotMe)
-    {
-        shotBy = whoShotMe;
-    }
 
     private void Awake()
     {
@@ -33,5 +28,10 @@ public class Bullet : Entity
         bh.DestroyBullet(0);
         
         other.GetComponent<Health>().TakeDamage(damage, shotBy);
+    }
+
+    public void InitBullet(Entity whoShotMe)
+    {
+        shotBy = whoShotMe;
     }
 }
