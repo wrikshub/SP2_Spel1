@@ -4,14 +4,10 @@ using System.Collections.Generic;
 using Cinemachine;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject player = null;
-    [SerializeField] private Transform spawnpoint = null;
-    [SerializeField] private GameObject spawnEffect = null;
-    private float timeSinceSpawned = 0;
-    private CinemachineVirtualCamera vcam = null;
     public static GameManager Instance { get; private set; }
     
     private void Awake()
@@ -24,23 +20,11 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-
-        vcam = Camera.main.GetComponent<CinemachineVirtualCamera>();
     }
 
     public void SpawnPlayer()
     {
-        var playerInst = Instantiate(player, spawnpoint.position, spawnpoint.rotation);
-        var effectInst = Instantiate(spawnEffect, playerInst.transform.position, quaternion.identity);
-        Destroy(effectInst, 2f);
-        vcam.Follow = playerInst.transform;
-        PlayerController pCont = playerInst.GetComponent<PlayerController>();
-        //pCont.FreezeEntity(true);
+        EntitySpawner.Instance.SpawnPlayer();
     }
-
-    private void UnFreezePlayer(PlayerController playerController)
-    {
-        playerController.FreezeEntity(false);
-    }
-
+    
 }

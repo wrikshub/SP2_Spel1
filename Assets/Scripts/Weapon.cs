@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using Cinemachine;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float screenshakeAmount = 0.1f;
     [SerializeField] private float knockback = 10f;
     [SerializeField] private float cooldown = 0.1f;
+    [SerializeField] private float spread = 0.1f;
     private float timeSinceFired = 0f;
 
     public event Delegate OnFire;
@@ -46,6 +48,7 @@ public class Weapon : MonoBehaviour
         timeSinceFired = 0;
         GameObject bullet = Instantiate(bulletToFire, transform.position, transform.rotation);
         var effect = Instantiate(firedEffect, transform.position, transform.rotation, bullet.transform);
+        Destroy(effect, 2f);
         impulse.GenerateImpulse(screenshakeAmount);
         OnFire?.Invoke(this, new WeaponArgs(){knockbackAmount = knockback, bullet = bullet.GetComponent<Bullet>()});
     }

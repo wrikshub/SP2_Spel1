@@ -11,7 +11,6 @@ public class PlayerVisual : MonoBehaviour
     [SerializeField] private Rigidbody2D rbod;
     [SerializeField] private Transform visualDir;
     [SerializeField] private Transform visualAim;
-    [SerializeField] private CameraShake cs;
     private float dirVel;
     private float cameraZoomVel;
     private float lookVel;

@@ -4853,7 +4853,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5021378092830981800}
+  - {fileID: 6626065174748040571}
   m_Father: {fileID: 8693476047638848377}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5100,7 +5100,6 @@ MonoBehaviour:
   rbod: {fileID: 8693476047509913074}
   visualDir: {fileID: 8693476047759481907}
   visualAim: {fileID: 8693476047638848377}
-  cs: {fileID: 0}
   dirDamp: 0.157
   cameraZoomDamp: 0.179
   lookDamp: 0.077
@@ -5133,6 +5132,9 @@ MonoBehaviour:
   gunHolder: {fileID: 8693476046632487204}
   whoHoldsMe: {fileID: 8693476047509913075}
   fireButton: Fire1
+  guns:
+  - {fileID: 4398585970053889627, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
+  - {fileID: 4398585970053889627, guid: ff73042ce241bdd49869e6dd64173d3d, type: 3}
 --- !u!50 &8693476047509913074
 Rigidbody2D:
   serializedVersion: 4
@@ -5470,7 +5472,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!1001 &8693476048413278450
+--- !u!1001 &7421485273426801441
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -5523,12 +5525,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4398585970053889627, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
       propertyPath: m_Name
-      value: Gun Variant
+      value: Gun_Small
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398585970053889627, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398585970053889637, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
+      propertyPath: spread
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
---- !u!4 &5021378092830981800 stripped
+--- !u!4 &6626065174748040571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4398585970053889626, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
-  m_PrefabInstance: {fileID: 8693476048413278450}
+  m_PrefabInstance: {fileID: 7421485273426801441}
   m_PrefabAsset: {fileID: 0}
