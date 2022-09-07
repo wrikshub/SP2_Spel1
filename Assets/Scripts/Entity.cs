@@ -27,4 +27,9 @@ public class Entity : MonoBehaviour
     {
         FreezeMovement = freeze;
     }
+
+    internal virtual void OnDeath(object sender, DamageArgs args)
+    {
+        FreezeMovement = true;
+    }
 }

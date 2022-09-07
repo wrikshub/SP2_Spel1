@@ -11,4 +11,11 @@ public class Enemy : Entity
     {
         hostile = true;
     }
+
+    internal override void OnDeath(object sender, DamageArgs args)
+    {
+        base.OnDeath(sender, args);
+        
+        ScoreManager.Instance.AddScore(score);
+    }
 }

@@ -15,7 +15,6 @@ public class Shooter : MonoBehaviour
     
     private void Start()
     {
-        //make this dynamic
         gun = gunHolder.transform.GetComponentInChildren<Weapon>();
         gun.OnFire += OnFireKnockback;
     }
@@ -28,7 +27,7 @@ public class Shooter : MonoBehaviour
     private void Update()
     {
         if (whoHoldsMe.FreezeMovement) return;
-        //effects.SpawnEffect(Vector3.zero, transform.localRotation.eulerAngles.z, 1);
+        
         if(Input.GetButton(fireButton))
             gun.Fire();
 

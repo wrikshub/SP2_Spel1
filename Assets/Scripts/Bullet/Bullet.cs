@@ -7,7 +7,7 @@ public class Bullet : Entity
 {
     private BulletHandler bh;
     private Entity shotBy = null;
-    [SerializeField] protected float damage = 10f;
+    [SerializeField] protected int damage = 10;
     [SerializeField] protected float speed = 1f;
     [SerializeField] private LayerMask layer;
     [SerializeField] private GameObject hitEffect = null;
@@ -29,7 +29,7 @@ public class Bullet : Entity
         
         bh.DestroyBullet(0);
         
-        other.GetComponent<Health>().TakeDamage(damage, shotBy);
+        other.GetComponent<Health>().TakeDamage(new DamageArgs{amount = damage, damagedByWho = shotBy});
     }
 
     private void OnCollisionEnter2D(Collision2D other)

@@ -42,6 +42,7 @@ public class PlayerController : Entity
 
     private void MovePlayer()
     {
+        //Lift these out
         pInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         rbod.AddForce(pInput * (moveSpeed * Time.deltaTime), ForceMode2D.Impulse);
         
