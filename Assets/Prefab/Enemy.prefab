@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd05e7a972208b84b9c98eeecf5098ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitParam: hit
+  hitParam: hurt
 --- !u!114 &5270279949438233967
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,14 +13,20 @@ public class Entity : MonoBehaviour
     [SerializeField] protected Health health;
     public bool FreezeMovement { private set; get; }
 
+    private void Start()
+    {
+        health = GetComponent<Health>();
+        health.OnNoHealth += OnDeath;
+    }
+
+    private void OnDestroy()
+    {
+        health.OnNoHealth -= OnDeath;
+    }
+
     public void ApplyKnockback(Vector2 dir, float amount)
     {
         rbod.AddForce(dir * amount, ForceMode2D.Impulse);
-    }
-
-    private void Update()
-    {
-        //health.
     }
 
     public void FreezeEntity(bool freeze)
@@ -31,5 +37,7 @@ public class Entity : MonoBehaviour
     internal virtual void OnDeath(object sender, DamageArgs args)
     {
         FreezeMovement = true;
+        print(this.entityName + " was killed by " + args.damagedByWho.entityName);
+        Destroy(gameObject);
     }
 }
