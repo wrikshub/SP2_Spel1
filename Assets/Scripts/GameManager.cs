@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject player = null;
     [SerializeField] private Transform spawnpoint = null;
     [SerializeField] private GameObject spawnEffect = null;
-    [SerializeField] private float spawnTimer = 1f;
     private float timeSinceSpawned = 0;
     private CinemachineVirtualCamera vcam = null;
     public static GameManager Instance { get; private set; }
@@ -32,10 +31,10 @@ public class GameManager : MonoBehaviour
     public void SpawnPlayer()
     {
         var playerInst = Instantiate(player, spawnpoint.position, spawnpoint.rotation);
-        //var effectInst = Instantiate(spawnEffect, playerInst.transform.position, quaternion.identity);
-        //Destroy(effectInst, 2f);
+        var effectInst = Instantiate(spawnEffect, playerInst.transform.position, quaternion.identity);
+        Destroy(effectInst, 2f);
         vcam.Follow = playerInst.transform;
-        //PlayerController pCont = playerInst.GetComponent<PlayerController>();
+        PlayerController pCont = playerInst.GetComponent<PlayerController>();
         //pCont.FreezeEntity(true);
     }
 
