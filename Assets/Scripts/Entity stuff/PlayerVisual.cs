@@ -11,7 +11,6 @@ public class PlayerVisual : MonoBehaviour
     [SerializeField] private Rigidbody2D rbod;
     [SerializeField] private Transform visualDir;
     [SerializeField] private Transform visualAim;
-    [SerializeField] private CameraShake cs;
     private float dirVel;
     private float cameraZoomVel;
     private float lookVel;
@@ -20,18 +19,20 @@ public class PlayerVisual : MonoBehaviour
     [Range(0,1)][SerializeField] private float cameraZoomDamp = 0.5f;
     [Range(0,1)][SerializeField] private float lookDamp = 0.5f;
     [Range(0, 5)][SerializeField] private float cameraZoomAmount = 2;
-
+    private float originalSize;
 
     private void Start()
     {
         cCont = Camera.main.GetComponent<CameraControl>();
+        originalSize = cCont.CameraSize;
         camZoomCurrent = cCont.CameraSize;
+        cameraZoomVel = 0f;
     }
 
     void Update()
     {
         RotatePlayerVisual();
-        CameraPreaim();
+        CameraZoom();
         Aim();
         ParticleSystemMakeInteresting();
     }
@@ -42,10 +43,10 @@ public class PlayerVisual : MonoBehaviour
         main.startSpeed = pCont.PSpeedRatio * 1.125f;
     }
 
-    private void CameraPreaim()
+    private void CameraZoom()
     {
         camZoomCurrent = Mathf.SmoothDamp(camZoomCurrent, pCont.PSpeedRatio * cameraZoomAmount, ref cameraZoomVel, cameraZoomDamp);
-        cCont.SetCameraZoom(cCont.CameraSize + camZoomCurrent);
+        cCont.SetCameraZoom(Mathf.Clamp(camZoomCurrent + originalSize, 0, 7.5f));
     }
 
     private void RotatePlayerVisual()

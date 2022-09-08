@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class WeaponArgs : EventArgs
 {
@@ -18,11 +20,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float screenshakeAmount = 0.1f;
     [SerializeField] private float knockback = 10f;
     [SerializeField] private float cooldown = 0.1f;
+    [SerializeField] private float spread = 0.1f;
     private float timeSinceFired = 0f;
 
-    public event Delegate OnFire;
+    public event FireWeapon OnFire;
 
-    public delegate void Delegate(object sender, WeaponArgs args);
+    public delegate void FireWeapon(object sender, WeaponArgs args);
 
     private void Awake()
     {
@@ -43,10 +46,16 @@ public class Weapon : MonoBehaviour
     public void Fire()
     {
         if (timeSinceFired < cooldown) return;
+        
         timeSinceFired = 0;
         GameObject bullet = Instantiate(bulletToFire, transform.position, transform.rotation);
+        bullet.transform.rotation =
+            Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + Random.Range(-spread, spread));
+        Bullet bulletRef = bullet.transform.GetComponentInChildren<Bullet>();
+        bulletRef.InitBullet(GetComponentInParent<Entity>());
         var effect = Instantiate(firedEffect, transform.position, transform.rotation, bullet.transform);
+        Destroy(effect, 2f);
         impulse.GenerateImpulse(screenshakeAmount);
-        OnFire?.Invoke(this, new WeaponArgs(){knockbackAmount = knockback, bullet = bullet.GetComponent<Bullet>()});
+        OnFire?.Invoke(this, new WeaponArgs(){knockbackAmount = knockback, bullet = bulletRef});
     }
 }

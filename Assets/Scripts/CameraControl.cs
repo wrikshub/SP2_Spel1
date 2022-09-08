@@ -10,7 +10,7 @@ public class CameraControl : MonoBehaviour
     [SerializeField] private CinemachineImpulseSource impulseSource;
     public float CameraSize { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
         CameraSize = vcam.m_Lens.OrthographicSize;
     }

@@ -31,16 +31,6 @@ public class PlayerController : Entity
         
         PSpeedRatio = (rbod.velocity.magnitude) / (speedlimit * speedlimit);
         PSpeedRatio = Mathf.Clamp01(PSpeedRatio);
-
-        /*
-        if (Input.GetMouseButtonDown(0))
-        {
-            pInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-            Vector3 mousePos = camera.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 relativeMousePos = mousePos - transform.position;
-            ApplyKnockback(relativeMousePos.normalized * -10f);
-        }
-        */
     }
     
     private void Aim()
@@ -52,6 +42,7 @@ public class PlayerController : Entity
 
     private void MovePlayer()
     {
+        //Lift these out
         pInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         rbod.AddForce(pInput * (moveSpeed * Time.deltaTime), ForceMode2D.Impulse);
         
