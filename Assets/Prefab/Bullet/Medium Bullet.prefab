@@ -13,7 +13,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 51426610680511389, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
       propertyPath: damage
-      value: 30
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 51426610680511389, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
+      propertyPath: hitEffect
+      value: 
+      objectReference: {fileID: 1031577078832508010, guid: ea72da1476ff78a4ebadc3570971d3b6, type: 3}
+    - target: {fileID: 51426610680511390, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 51426610680511391, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
       propertyPath: m_LocalScale.x

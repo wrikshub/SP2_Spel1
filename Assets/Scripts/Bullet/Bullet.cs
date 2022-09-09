@@ -9,8 +9,9 @@ public class Bullet : Entity
     private Entity shotBy = null;
     [SerializeField] protected int damage = 10;
     [SerializeField] protected float speed = 1f;
-    [SerializeField] private LayerMask layer;
-    [SerializeField] private GameObject hitEffect = null;
+    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private LayerMask ignoreLayer;
+    [SerializeField] public GameObject hitEffect = null;
 
     private void Awake()
     {
@@ -24,18 +25,28 @@ public class Bullet : Entity
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Health>() == null) return;
-        if (!other.GetComponent<Entity>().hostile && !this.hostile) return;
-        
-        bh.DestroyBullet(0);
-        
-        other.GetComponent<Health>().TakeDamage(new DamageArgs{amount = damage, damagedByWho = shotBy});
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if ((other.gameObject.layer | (1 << layer)) == layer)
+        if (((1 << other.gameObject.layer) & wallLayer) != 0)
         {
+            bh.DestroyBullet(0);
+        }
+
+        Entity hit = other.GetComponent<Entity>();
+        Health health = other.GetComponent<Health>();
+        
+        if (hit == null) return;
+        if (health == null) return;
+        
+        //Hit enemy
+        if (hit.hostile && !hostile)
+        {
+            health.TakeDamage(new DamageArgs {amount = damage, damagedByWho = shotBy});
+            bh.DestroyBullet(0);
+        }
+        
+        //Hit player
+        if (!hit.hostile && hostile)
+        {
+            health.TakeDamage(new DamageArgs {amount = damage, damagedByWho = shotBy});
             bh.DestroyBullet(0);
         }
     }

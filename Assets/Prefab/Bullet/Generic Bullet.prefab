@@ -71,10 +71,13 @@ MonoBehaviour:
   health: {fileID: 862183132549352250}
   damage: 10
   speed: 25
-  layer:
+  wallLayer:
     serializedVersion: 2
     m_Bits: 64
-  hitEffect: {fileID: 0}
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  hitEffect: {fileID: 1031577078832508010, guid: eb1904837d51d164c8a2b1ff049a46c7, type: 3}
 --- !u!50 &7510546158550563166
 Rigidbody2D:
   serializedVersion: 4
@@ -92,7 +95,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
@@ -108,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cf2afcadc39ed4faf81a9fe8911662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  CurrentHealth: 5
 --- !u!1 &2106226585437363436
 GameObject:
   m_ObjectHideFlags: 0
