@@ -11,7 +11,7 @@ public class DamageArgs : EventArgs
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private float health = 100f;
+    public int CurrentHealth = 5;
     private bool dead = false;
 
     private DamageArgs lastDamageArgs = null;
@@ -21,7 +21,6 @@ public class Health : MonoBehaviour
     public delegate void EntityTakeDamage(object sender, DamageArgs damageArgs);
     public delegate void NoHealth(object sender, DamageArgs damageArgs);
     
-    //OnTakeDamage?
     public void TakeDamage(DamageArgs d)
     {
         if (dead) return;
@@ -30,14 +29,14 @@ public class Health : MonoBehaviour
         lastDamageArgs = d;
         
         //Add knockback
-        health = Mathf.Max(health -= d.amount, 0);
+        CurrentHealth = Mathf.Max(CurrentHealth -= d.amount, 0);
     }
 
     private void Update()
     {
         if (dead) return;
         
-        if (health == 0)
+        if (CurrentHealth == 0)
         {
             OnNoHealth?.Invoke(this, lastDamageArgs);
             dead = true;

@@ -15,6 +15,10 @@ public class EntitySpawner : MonoBehaviour
     [SerializeField] private GameObject enemy;
     public static EntitySpawner Instance { get; private set; }
 
+
+    public event ES_SpawnPlayer OnSpawnPlayer;
+    public delegate void ES_SpawnPlayer(object sender, GameObject player);
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -46,6 +50,7 @@ public class EntitySpawner : MonoBehaviour
     public void SpawnPlayer()
     {
         var playerInst = Instantiate(player, spawnpoint.position, spawnpoint.rotation);
+        OnSpawnPlayer?.Invoke(this, playerInst);
         var effectInst = Instantiate(spawnEffect, playerInst.transform.position, Quaternion.identity);
         Destroy(effectInst, 2f);
         vcam.Follow = playerInst.transform;
