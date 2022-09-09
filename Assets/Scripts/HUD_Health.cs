@@ -62,8 +62,8 @@ public class HUD_Health : MonoBehaviour
     {
         if (!playerHasSpawned) return;
         
-        //if(Input.GetKeyDown(KeyCode.L))
-        //    OnTakeDamage(null, null);
+        if(Input.GetKeyDown(KeyCode.L))
+            OnTakeDamage(null, null);
         
         currentTimer += Time.deltaTime;
         

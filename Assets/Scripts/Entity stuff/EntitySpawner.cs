@@ -43,7 +43,6 @@ public class EntitySpawner : MonoBehaviour
     {
         var enemyInst = Instantiate(enemy, new Vector2(UnityEngine.Random.Range(-5, 5),UnityEngine.Random.Range(-5, 5)), Quaternion.identity);
         var effectInst = Instantiate(spawnEffect, enemyInst.transform.position, Quaternion.identity);
-        effectInst.GetComponent<SpawnEffect>().Init(true);
         Destroy(effectInst, 2f);
     }
     
