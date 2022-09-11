@@ -12,6 +12,7 @@ public class Bullet : Entity
     [SerializeField] private LayerMask wallLayer;
     [SerializeField] private LayerMask ignoreLayer;
     [SerializeField] public GameObject hitEffect = null;
+    [SerializeField] private AudioEvent hitSound;
 
     private void Awake()
     {
@@ -28,6 +29,7 @@ public class Bullet : Entity
         if (((1 << other.gameObject.layer) & wallLayer) != 0)
         {
             bh.DestroyBullet(0);
+            Hit();
         }
 
         Entity hit = other.GetComponent<Entity>();
@@ -41,6 +43,7 @@ public class Bullet : Entity
         {
             health.TakeDamage(new DamageArgs {amount = damage, damagedByWho = shotBy});
             bh.DestroyBullet(0);
+            Hit();
         }
         
         //Hit player
@@ -54,5 +57,10 @@ public class Bullet : Entity
     public void InitBullet(Entity whoShotMe)
     {
         shotBy = whoShotMe;
+    }
+
+    private void Hit()
+    {
+        hitSound.Play(null, transform.position);
     }
 }

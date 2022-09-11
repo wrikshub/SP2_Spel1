@@ -10,6 +10,7 @@ public class EntitySpawner : MonoBehaviour
     [SerializeField] private GameObject player = null;
     [SerializeField] private Transform spawnpoint = null;
     [SerializeField] private GameObject spawnEffect = null;
+    [SerializeField] private AudioEvent spawnSound = null;
     private float timeSinceSpawned = 0;
     private CinemachineVirtualCamera vcam = null;
     [SerializeField] private GameObject enemy;
@@ -43,6 +44,7 @@ public class EntitySpawner : MonoBehaviour
     {
         var enemyInst = Instantiate(enemy, new Vector2(UnityEngine.Random.Range(-5, 5),UnityEngine.Random.Range(-5, 5)), Quaternion.identity);
         var effectInst = Instantiate(spawnEffect, enemyInst.transform.position, Quaternion.identity);
+        spawnSound.Play(null, enemy.transform.position);
         Destroy(effectInst, 2f);
     }
     
@@ -52,6 +54,7 @@ public class EntitySpawner : MonoBehaviour
         OnSpawnPlayer?.Invoke(this, playerInst);
         var effectInst = Instantiate(spawnEffect, playerInst.transform.position, Quaternion.identity);
         Destroy(effectInst, 2f);
+        spawnSound.Play(null, transform.position);
         vcam.Follow = playerInst.transform;
         PlayerController pCont = playerInst.GetComponent<PlayerController>();
         //pCont.FreezeEntity(true);

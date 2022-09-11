@@ -9,16 +9,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
       propertyPath: spread
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
       propertyPath: cooldown
-      value: 0.125
+      value: 0.175
       objectReference: {fileID: 0}
     - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
       propertyPath: knockback
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 049bd1a96b93787428e774cd4ac6d822, type: 2}
     - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
       propertyPath: firedEffect
       value: 
@@ -116,7 +120,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    m_ImpulseDuration: 0.3
+    m_ImpulseDuration: 0.2
     m_ImpulseType: 0
     m_DissipationRate: 0.25
     m_RawSignal: {fileID: 0}
@@ -147,4 +151,4 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 0, y: -1, z: 0}
+  m_DefaultVelocity: {x: 0, y: -0.5, z: 0}

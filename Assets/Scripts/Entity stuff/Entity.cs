@@ -11,6 +11,8 @@ public class Entity : MonoBehaviour
 
     [SerializeField] protected Rigidbody2D rbod;
     [SerializeField] protected Health health;
+    [SerializeField] private AudioEvent deathSound;
+    [SerializeField] private AudioEvent damageSound;
     public bool FreezeMovement { private set; get; }
 
     private void Start()
@@ -37,6 +39,7 @@ public class Entity : MonoBehaviour
     internal virtual void OnDeath(object sender, DamageArgs args)
     {
         FreezeMovement = true;
+        deathSound.Play(null, transform.position);
         print(this.entityName + " was killed by " + args.damagedByWho.entityName);
         Destroy(gameObject);
     }

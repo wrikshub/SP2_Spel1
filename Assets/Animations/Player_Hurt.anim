@@ -217,7 +217,18 @@ AnimationClip:
     path: Visual/RotateWithPlayerDir/Forward
     classID: 212
     script: {fileID: 0}
-  m_PPtrCurves: []
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 3d07e751f80177242a6235d5fd7fb02c, type: 3}
+    - time: 0.016666668
+      value: {fileID: 21300000, guid: b6e75749c40fb44418a4ddbe7a773b8b, type: 3}
+    - time: 1
+      value: {fileID: 21300000, guid: 3d07e751f80177242a6235d5fd7fb02c, type: 3}
+    attribute: m_Sprite
+    path: Visual/RotateWithPlayerDir/Forward
+    classID: 212
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -255,18 +266,28 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3896135858
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 3896135858
       attribute: 304273561
       script: {fileID: 0}
       typeID: 212
       customType: 0
       isPPtrCurve: 0
-    pptrCurveMapping: []
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 3d07e751f80177242a6235d5fd7fb02c, type: 3}
+    - {fileID: 21300000, guid: b6e75749c40fb44418a4ddbe7a773b8b, type: 3}
+    - {fileID: 21300000, guid: 3d07e751f80177242a6235d5fd7fb02c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5833333
+    m_StopTime: 1.0166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

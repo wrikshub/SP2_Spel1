@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f3d6a853fa258c3429845bc43ea3a0ab
+guid: f9a022625f4fcda4789f4f3b48913d46
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,11 +136,65 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hearts 1_0
+      name: hearts_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4666800ef04f5b24882774ed1fee8c4d
+      internalID: -673998822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hearts_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 12
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0241467a80f96147a0e58b85ce9fc50
+      internalID: 1200353583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hearts_2
       rect:
         serializedVersion: 2
         x: 0
@@ -154,29 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00b046d6ed5a6c946baea4bc6d9cac78
-      internalID: 533827046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hearts 1_1
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 0
-        width: 13
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc694b86c3d858349bb2b6eddcfc8429
-      internalID: 1858420997
+      spriteID: dabcd30410b676f4e95c89fd7d28dbb1
+      internalID: -337467543
       vertices: []
       indices: 
       edges: []
@@ -192,8 +225,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      hearts 1_0: 533827046
-      hearts 1_1: 1858420997
+      hearts_2: -337467543
+      hearts_1: 1200353583
+      hearts_0: -673998822
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

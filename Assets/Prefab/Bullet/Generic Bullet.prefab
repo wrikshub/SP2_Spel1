@@ -78,6 +78,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   hitEffect: {fileID: 1031577078832508010, guid: eb1904837d51d164c8a2b1ff049a46c7, type: 3}
+  hitSound: {fileID: 11400000, guid: 305eb2de6f79bb0419ea696786a2a1f3, type: 2}
 --- !u!50 &7510546158550563166
 Rigidbody2D:
   serializedVersion: 4

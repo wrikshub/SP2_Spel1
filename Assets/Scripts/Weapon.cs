@@ -21,6 +21,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float knockback = 10f;
     [SerializeField] private float cooldown = 0.1f;
     [SerializeField] private float spread = 0.1f;
+    [SerializeField] private SimpleAudioEvent shootSound = null;
     private float timeSinceFired = 0f;
 
     public event FireWeapon OnFire;
@@ -48,6 +49,7 @@ public class Weapon : MonoBehaviour
         if (timeSinceFired < cooldown) return;
         
         timeSinceFired = 0;
+        shootSound.Play();
         GameObject bullet = Instantiate(bulletToFire, transform.position, transform.rotation);
         bullet.transform.rotation =
             Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + Random.Range(-spread, spread));

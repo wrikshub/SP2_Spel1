@@ -8,13 +8,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 51426610680511389, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
+      propertyPath: ae
+      value: 
+      objectReference: {fileID: 11400000, guid: 79e7c1db06210a0429be18e20270eb65, type: 2}
+    - target: {fileID: 51426610680511389, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
       propertyPath: speed
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 51426610680511389, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
       propertyPath: damage
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 51426610680511389, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 79e7c1db06210a0429be18e20270eb65, type: 2}
     - target: {fileID: 51426610680511389, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
       propertyPath: hitEffect
       value: 

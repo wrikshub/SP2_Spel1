@@ -50,6 +50,8 @@ MonoBehaviour:
   screenshakeAmount: 0.1
   knockback: 5
   cooldown: 0.125
+  spread: 0.1
+  shootSound: {fileID: 11400000, guid: 163b195a7217fcb45aa0c5ae9d2b9ca1, type: 2}
 --- !u!114 &4052102614237245362
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: damage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 51426610680511389, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 305eb2de6f79bb0419ea696786a2a1f3, type: 2}
     - target: {fileID: 51426610680511391, guid: f4e1b60216ae7984dba3ce8ea4269342, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.4375

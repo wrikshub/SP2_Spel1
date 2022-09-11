@@ -1,5 +1,7 @@
 REMEMBER TO USE SCRIPTABLEOBJECTS FOR AUDIO
 
+big bullet should be able to pass through n amounts of enemies
+
 credit
 https://www.dafont.com/aldo-the-apache.font
 https://www.dafont.com/pointless-2.font?l[]=10&l[]=1
