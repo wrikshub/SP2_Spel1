@@ -28,6 +28,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2981120107317352301, guid: 3bc4b4e7a2be41849905986abe2dab31, type: 3}
     - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
+      propertyPath: recoilForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
       propertyPath: screenshakeAmount
       value: 0.1
       objectReference: {fileID: 0}

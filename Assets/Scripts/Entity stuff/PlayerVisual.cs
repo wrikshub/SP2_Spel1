@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class PlayerVisual : MonoBehaviour
 {
+    [SerializeField] private Animator anim;
+    [SerializeField] private string invincibleAnimProperty = "invincible";
     [SerializeField] private ParticleSystem ps;
     [SerializeField] private PlayerController pCont;
-    [SerializeField] private CameraControl cCont;
     [SerializeField] private Rigidbody2D rbod;
     [SerializeField] private Transform visualDir;
     [SerializeField] private Transform visualAim;
+    private CameraControl cCont;
+    private Health health;
     private float dirVel;
     private float cameraZoomVel;
     private float lookVel;
-    private float camZoomCurrent = 0f;
+    private float camZoomCurrent;
     [Range(0,1)][SerializeField] private float dirDamp = 0.5f;
     [Range(0,1)][SerializeField] private float cameraZoomDamp = 0.5f;
     [Range(0,1)][SerializeField] private float lookDamp = 0.5f;
@@ -27,10 +30,14 @@ public class PlayerVisual : MonoBehaviour
         originalSize = cCont.CameraSize;
         camZoomCurrent = cCont.CameraSize;
         cameraZoomVel = 0f;
+        health = GetComponent<Health>();
+        
     }
 
     void Update()
     {
+        anim.SetBool(invincibleAnimProperty, health.Invincible);
+        
         RotatePlayerVisual();
         CameraZoom();
         Aim();

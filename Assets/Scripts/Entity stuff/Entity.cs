@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected Health health;
     [SerializeField] private AudioEvent deathSound;
     [SerializeField] private AudioEvent damageSound;
+    
     public bool FreezeMovement { private set; get; }
 
     private void Start()
@@ -28,7 +29,8 @@ public class Entity : MonoBehaviour
 
     public void ApplyKnockback(Vector2 dir, float amount)
     {
-        rbod.AddForce(dir * amount, ForceMode2D.Impulse);
+        if(!health.Invincible)
+            rbod.AddForce(dir * amount, ForceMode2D.Impulse);
     }
 
     public void FreezeEntity(bool freeze)

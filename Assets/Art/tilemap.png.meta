@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a9eaef53cc686c42a3c3d40ab5fa037
+guid: 2120ef3624ea9b445b3a07763467b88f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -38,12 +38,12 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
+  spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -66,9 +66,9 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
@@ -80,7 +80,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 8192
     resizeAlgorithm: 0
-    textureFormat: 10
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -136,27 +136,15 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tileset_0
+      name: tilemap_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -166,18 +154,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc0325ec00052f141863743072fdeece
-      internalID: 61633507
+      spriteID: 48cf86a8827bbd546ac687bdea572d61
+      internalID: -1466122388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_1
+      name: tilemap_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 17
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -187,18 +175,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 227203ac0d2a8fa4c8f782c323c17ddb
-      internalID: -686659804
+      spriteID: a2e12979562091843b77f5452c72d4f9
+      internalID: 34904906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_2
+      name: tilemap_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 34
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -208,18 +196,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd149b76284e19041975db89bd1c5c72
-      internalID: -2098598509
+      spriteID: b39d31b08390fdc4aa558d7c12d96de3
+      internalID: 1045966172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_3
+      name: tilemap_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
+        x: 51
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -229,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef48f2ba651c73e4ab7bfc77daa59548
-      internalID: 52509551
+      spriteID: cc2e1f2fdd3ae0641a5da7b4b207d872
+      internalID: -1684384105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_4
+      name: tilemap_4
       rect:
         serializedVersion: 2
         x: 0
@@ -250,17 +238,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dcf27804f6fcfc4b875e178785e81d8
-      internalID: -1457546824
+      spriteID: f76ceea82c2190a43b4fee61f5d14479
+      internalID: 763098793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_5
+      name: tilemap_5
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 0
         width: 16
         height: 16
@@ -271,17 +259,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3caeec4c6bd9cf3488b93006e47a2c7d
-      internalID: 2104705631
+      spriteID: 12cf335282eab8a4086d4c3b4d432f33
+      internalID: 234232345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_6
+      name: tilemap_6
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 0
         width: 16
         height: 16
@@ -292,17 +280,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc2288f46238d6847b92a490e9f29c85
-      internalID: -1819128768
+      spriteID: e5636375f2735c444a32a28678a6ba09
+      internalID: 607372602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_7
+      name: tilemap_7
       rect:
         serializedVersion: 2
-        x: 48
+        x: 51
         y: 0
         width: 16
         height: 16
@@ -313,8 +301,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 888c63ba1c3ed3a45bd56a852f05d233
-      internalID: -762223022
+      spriteID: 4df3969dc53c2d94095c08ad2f788a79
+      internalID: -1794569222
       vertices: []
       indices: 
       edges: []
@@ -330,14 +318,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tileset_0: 61633507
-      tileset_4: -1457546824
-      tileset_1: -686659804
-      tileset_6: -1819128768
-      tileset_5: 2104705631
-      tileset_2: -2098598509
-      tileset_7: -762223022
-      tileset_3: 52509551
+      tilemap_7: -1794569222
+      tilemap_5: 234232345
+      tilemap_2: 1045966172
+      tilemap_3: -1684384105
+      tilemap_0: -1466122388
+      tilemap_6: 607372602
+      tilemap_4: 763098793
+      tilemap_1: 34904906
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -48,7 +48,7 @@ MonoBehaviour:
   bulletToFire: {fileID: 5714689806636203236, guid: 13853ebb0dc7fef49ba7799c6085f288, type: 3}
   firedEffect: {fileID: 2981120107317352301, guid: cb84896e4ee6e3d42ac17dc16d9835b9, type: 3}
   screenshakeAmount: 0.1
-  knockback: 5
+  recoilForce: 1
   cooldown: 0.125
   spread: 0.1
   shootSound: {fileID: 11400000, guid: 163b195a7217fcb45aa0c5ae9d2b9ca1, type: 2}

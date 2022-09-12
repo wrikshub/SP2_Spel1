@@ -13,6 +13,7 @@ public class Bullet : Entity
     [SerializeField] private LayerMask ignoreLayer;
     [SerializeField] public GameObject hitEffect = null;
     [SerializeField] private AudioEvent hitSound;
+    [SerializeField] private float bKnockback = 10f;
 
     private void Awake()
     {
@@ -34,22 +35,24 @@ public class Bullet : Entity
 
         Entity hit = other.GetComponent<Entity>();
         Health health = other.GetComponent<Health>();
-        
+
         if (hit == null) return;
         if (health == null) return;
-        
+
         //Hit enemy
         if (hit.hostile && !hostile)
         {
-            health.TakeDamage(new DamageArgs {amount = damage, damagedByWho = shotBy});
+            health.TakeDamage(new DamageArgs
+                {amount = damage, damagedByWho = shotBy, pos = shotBy.transform.position, knockback = bKnockback});
             bh.DestroyBullet(0);
             Hit();
         }
-        
+
         //Hit player
         if (!hit.hostile && hostile)
         {
-            health.TakeDamage(new DamageArgs {amount = damage, damagedByWho = shotBy});
+            health.TakeDamage(new DamageArgs
+                {amount = damage, damagedByWho = shotBy, pos = shotBy.transform.position, knockback = bKnockback});
             bh.DestroyBullet(0);
         }
     }

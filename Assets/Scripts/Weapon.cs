@@ -18,7 +18,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject firedEffect;
     private CinemachineImpulseSource impulse;
     [SerializeField] private float screenshakeAmount = 0.1f;
-    [SerializeField] private float knockback = 10f;
+    [SerializeField] private float recoilForce = 10f;
     [SerializeField] private float cooldown = 0.1f;
     [SerializeField] private float spread = 0.1f;
     [SerializeField] private SimpleAudioEvent shootSound = null;
@@ -58,6 +58,6 @@ public class Weapon : MonoBehaviour
         var effect = Instantiate(firedEffect, transform.position, transform.rotation, bullet.transform);
         Destroy(effect, 2f);
         impulse.GenerateImpulse(screenshakeAmount);
-        OnFire?.Invoke(this, new WeaponArgs(){knockbackAmount = knockback, bullet = bulletRef});
+        OnFire?.Invoke(this, new WeaponArgs(){knockbackAmount = recoilForce, bullet = bulletRef});
     }
 }

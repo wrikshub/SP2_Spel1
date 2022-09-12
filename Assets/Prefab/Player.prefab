@@ -9922,6 +9922,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813a4fdf737d0bb49ac1638352644f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 410476925383830459}
+  invincibleAnimProperty: invincible
   ps: {fileID: 8693476046566286889}
   pCont: {fileID: 8693476047509913075}
   cCont: {fileID: 0}

@@ -28,6 +28,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2981120107317352301, guid: cb84896e4ee6e3d42ac17dc16d9835b9, type: 3}
     - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
+      propertyPath: recoilForce
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678072897357668299, guid: cd9b7f2847fe4ea4daef3d38bc4d7931, type: 3}
       propertyPath: bulletToFire
       value: 
       objectReference: {fileID: 5714689806636203236, guid: c4e18d91c42fe2a45afed8cf65cb7b48, type: 3}

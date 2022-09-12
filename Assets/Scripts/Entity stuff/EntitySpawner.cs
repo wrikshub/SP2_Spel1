@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EntitySpawner : MonoBehaviour
 {
-    
+    [SerializeField] private float playerTimeInvicible = 2.5f;
     [SerializeField] private GameObject player = null;
     [SerializeField] private Transform spawnpoint = null;
     [SerializeField] private GameObject spawnEffect = null;
@@ -15,7 +15,6 @@ public class EntitySpawner : MonoBehaviour
     private CinemachineVirtualCamera vcam = null;
     [SerializeField] private GameObject enemy;
     public static EntitySpawner Instance { get; private set; }
-
 
     public event ES_SpawnPlayer OnSpawnPlayer;
     public delegate void ES_SpawnPlayer(object sender, GameObject player);
@@ -56,7 +55,7 @@ public class EntitySpawner : MonoBehaviour
         Destroy(effectInst, 2f);
         spawnSound.Play(null, transform.position);
         vcam.Follow = playerInst.transform;
-        PlayerController pCont = playerInst.GetComponent<PlayerController>();
+        playerInst.GetComponent<Health>().MakeInvincible(playerTimeInvicible);
         //pCont.FreezeEntity(true);
     }
 
