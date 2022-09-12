@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerVisual : MonoBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private string invincibleAnimProperty = "invincible";
+    [SerializeField] private string invincibleAnimPropertyBool = "invincible";
     [SerializeField] private ParticleSystem ps;
     [SerializeField] private PlayerController pCont;
     [SerializeField] private Rigidbody2D rbod;
@@ -31,13 +31,18 @@ public class PlayerVisual : MonoBehaviour
         camZoomCurrent = cCont.CameraSize;
         cameraZoomVel = 0f;
         health = GetComponent<Health>();
-        
+        health.OnInvincible += OnPlayerChangeInvincibleState;
+        health.OnNotInvincible += OnPlayerChangeInvincibleState;
+    }
+
+    private void OnDisable()
+    {
+        health.OnInvincible -= OnPlayerChangeInvincibleState;
+        health.OnNotInvincible -= OnPlayerChangeInvincibleState;
     }
 
     void Update()
     {
-        anim.SetBool(invincibleAnimProperty, health.Invincible);
-        
         RotatePlayerVisual();
         CameraZoom();
         Aim();
@@ -74,5 +79,10 @@ public class PlayerVisual : MonoBehaviour
         
         visualAim.localRotation = Quaternion.Euler(visualAim.localRotation.eulerAngles.x, visualAim.localRotation.eulerAngles.y,
             aimAmount);
+    }
+    
+    private void OnPlayerChangeInvincibleState(object s, float d, bool isInvis)
+    {
+        anim.SetBool(invincibleAnimPropertyBool, isInvis);
     }
 }

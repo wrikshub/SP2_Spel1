@@ -12,7 +12,6 @@ public class HUD_Health : MonoBehaviour
     [SerializeField] private string heartDamageTag = "damaged";
     private List<GameObject> activeIcons = new List<GameObject>();
     private int timesTakenDamage = 0;
-    private float middleOfScreenCoords = 0;
     private List<Vector2> spawnCoords = new List<Vector2>();
     private int lives = 5;
     [SerializeField] private float spawnTimer = 0.125f;

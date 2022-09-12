@@ -14,6 +14,8 @@ public class Bullet : Entity
     [SerializeField] public GameObject hitEffect = null;
     [SerializeField] private AudioEvent hitSound;
     [SerializeField] private float bKnockback = 10f;
+    [SerializeField] private int timesPassThroughEnemy = 0;
+    private int timesHit = 0;
 
     private void Awake()
     {
@@ -32,7 +34,7 @@ public class Bullet : Entity
             bh.DestroyBullet(0);
             Hit();
         }
-
+        
         Entity hit = other.GetComponent<Entity>();
         Health health = other.GetComponent<Health>();
 
@@ -42,10 +44,14 @@ public class Bullet : Entity
         //Hit enemy
         if (hit.hostile && !hostile)
         {
+            timesHit++;
             health.TakeDamage(new DamageArgs
                 {amount = damage, damagedByWho = shotBy, pos = shotBy.transform.position, knockback = bKnockback});
-            bh.DestroyBullet(0);
             Hit();
+            if (timesHit > timesPassThroughEnemy)
+            {
+                bh.DestroyBullet(0);
+            }
         }
 
         //Hit player

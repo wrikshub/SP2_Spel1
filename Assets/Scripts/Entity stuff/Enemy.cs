@@ -7,6 +7,8 @@ using UnityEngine;
 public class Enemy : Entity
 {
     [SerializeField] private int score = 100;
+    [SerializeField] public int damageOnTouch = 1;
+    [SerializeField] public int knockbackOnTouch = 5;
     [SerializeField] private GameObject scoreEffect = null;
     
     private void Awake()

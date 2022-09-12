@@ -9862,7 +9862,7 @@ GameObject:
   - component: {fileID: 8693476047509913072}
   - component: {fileID: 8693476047509913075}
   - component: {fileID: 8693476047509913078}
-  - component: {fileID: 8693476047509913073}
+  - component: {fileID: 3193700608292645066}
   - component: {fileID: 8693476047509913079}
   - component: {fileID: 8693476047509913074}
   - component: {fileID: 8693476047509913076}
@@ -9904,8 +9904,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: Player
   hostile: 0
+  hurtEffect: {fileID: 8820006445289908465, guid: fa837851b72dd264dae40eda8138af19, type: 3}
   rbod: {fileID: 8693476047509913074}
-  health: {fileID: 8693476047509913073}
+  health: {fileID: 3193700608292645066}
   deathSound: {fileID: 11400000, guid: ba2db223f728f354fa20bed2767d7280, type: 2}
   damageSound: {fileID: 0}
   speedlimit: 4.5
@@ -9923,10 +9924,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 410476925383830459}
-  invincibleAnimProperty: invincible
+  invincibleAnimPropertyBool: invincible
   ps: {fileID: 8693476046566286889}
   pCont: {fileID: 8693476047509913075}
-  cCont: {fileID: 0}
   rbod: {fileID: 8693476047509913074}
   visualDir: {fileID: 8693476047759481907}
   visualAim: {fileID: 8693476047638848377}
@@ -9934,7 +9934,7 @@ MonoBehaviour:
   cameraZoomDamp: 0.179
   lookDamp: 0.077
   cameraZoomAmount: 1.43
---- !u!114 &8693476047509913073
+--- !u!114 &3193700608292645066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9943,10 +9943,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8693476047509897741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3cf2afcadc39ed4faf81a9fe8911662, type: 3}
+  m_Script: {fileID: 11500000, guid: 8439cd21aa7be614e876a7a15bcaefc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHealth: 5
+  invincibleTimerMax: 5
 --- !u!114 &8693476047509913079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9964,7 +9965,7 @@ MonoBehaviour:
   fireButton: Fire1
   guns:
   - {fileID: 4398585970053889627, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
-  - {fileID: 4398585970053889627, guid: ff73042ce241bdd49869e6dd64173d3d, type: 3}
+  - {fileID: 4398585970053889627, guid: ef05588c9225b70429251de87a450065, type: 3}
 --- !u!50 &8693476047509913074
 Rigidbody2D:
   serializedVersion: 4
@@ -10381,6 +10382,10 @@ PrefabInstance:
     - target: {fileID: 4398585970053889627, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398585970053889627, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67fec856ff5128b429ace53e4c40e3b9, type: 3}
