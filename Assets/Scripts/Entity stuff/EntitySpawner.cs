@@ -1,8 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EntitySpawner : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class EntitySpawner : MonoBehaviour
     [SerializeField] private AudioEvent spawnSound = null;
     private float timeSinceSpawned = 0;
     private CinemachineVirtualCamera vcam = null;
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject[] enemies;
     public static EntitySpawner Instance { get; private set; }
 
     public event ES_SpawnPlayer OnSpawnPlayer;
@@ -36,7 +35,9 @@ public class EntitySpawner : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
-            SpawnEnemy(enemy);
+        {
+            SpawnEnemy(enemies[Random.Range(0, enemies.Length)]);
+        }
     }
 
     public void SpawnEnemy(GameObject enemy)

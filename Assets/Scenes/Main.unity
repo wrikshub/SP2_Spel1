@@ -3929,11 +3929,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd6c4e42d46cbb4e8298020194baf68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTimeInvicible: 2.5
   player: {fileID: 8693476047509897741, guid: 5da0190bc0563c24a9cce6895f44ce34, type: 3}
   spawnpoint: {fileID: 609916128}
   spawnEffect: {fileID: 2313809234660183307, guid: 526bf66f290240840a08f3ff705115ab, type: 3}
   spawnSound: {fileID: 11400000, guid: a14194defc432994a88e0d47d26dd97d, type: 2}
-  enemy: {fileID: 2177820766076046680, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+  enemies:
+  - {fileID: 2177820766076046680, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+  - {fileID: 2177820766076046680, guid: 7e6c676fb568f5c4bb38dded93fb0190, type: 3}
 --- !u!1 &1685656034
 GameObject:
   m_ObjectHideFlags: 0

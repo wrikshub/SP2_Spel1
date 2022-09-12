@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 2177820766076046687}
   - component: {fileID: 5270279949438233967}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6834e9273383367429938e87964ade4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityName: Bob Odenkirk
+  entityName: Skeleton
   hostile: 1
   rbod: {fileID: 2177820766076046685}
   health: {fileID: 2177820766076046681}

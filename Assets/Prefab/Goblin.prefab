@@ -116,14 +116,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6834e9273383367429938e87964ade4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityName: Bob Odenkirk
+  entityName: Goblin
   hostile: 1
   rbod: {fileID: 2177820766076046685}
   health: {fileID: 2177820766076046681}
   deathSound: {fileID: 11400000, guid: ba2db223f728f354fa20bed2767d7280, type: 2}
   damageSound: {fileID: 0}
-  score: 75
-  scoreEffect: {fileID: 0}
+  score: 325
+  scoreEffect: {fileID: 6604293503177177927, guid: 923c6f37c199507489b8488ba7ba406e, type: 3}
 --- !u!114 &2177820766076046681
 MonoBehaviour:
   m_ObjectHideFlags: 0
