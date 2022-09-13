@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     private GameObject player;
     [SerializeField] private DeathCanvas dCanvas;
     [SerializeField] private GameObject heartCanvas;
-    
+    [SerializeField] private GameObject scoreCanvas;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -61,7 +62,8 @@ public class GameManager : MonoBehaviour
     private void GameOver(object sender, DamageArgs damageargs)
     {
         player.GetComponent<Health>().OnNoHealth -= GameOver; 
-        dCanvas.GameOver(timeSpentAlive);
+        dCanvas.GameOver(timeSpentAlive, ScoreManager.Instance.Score);
         heartCanvas.SetActive(false);
+        scoreCanvas.SetActive(false);
     }
 }

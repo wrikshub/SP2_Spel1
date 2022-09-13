@@ -34,7 +34,7 @@ public class Bullet : Entity
             bh.DestroyBullet(0);
             Hit();
         }
-        
+
         Entity hit = other.GetComponent<Entity>();
         Health health = other.GetComponent<Health>();
 
@@ -45,8 +45,10 @@ public class Bullet : Entity
         if (hit.hostile && !hostile)
         {
             timesHit++;
-            health.TakeDamage(new DamageArgs
-                {amount = damage, damagedByWho = shotBy, pos = shotBy.transform.position, knockback = bKnockback});
+            if (health != null)
+                health.TakeDamage(new DamageArgs
+                    {amount = damage, damagedByWho = shotBy, pos = shotBy.transform.position, knockback = bKnockback});
+            
             Hit();
             if (timesHit > timesPassThroughEnemy)
             {
