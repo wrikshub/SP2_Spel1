@@ -10,11 +10,15 @@ public class EntitySpawner : MonoBehaviour
     [SerializeField] private Transform spawnpoint = null;
     [SerializeField] private GameObject spawnEffect = null;
     [SerializeField] private AudioEvent spawnSound = null;
-    private float timeSinceSpawned = 0;
     private CinemachineVirtualCamera vcam = null;
     [SerializeField] private GameObject[] enemies;
-    public static EntitySpawner Instance { get; private set; }
 
+    private float timeSinceSpawnedLastBatchMax = 1;
+    private float timeSinceSpawnedLastBatch = 0;
+    [SerializeField] private float enemyRandSpawnRateMax = 20;
+    [SerializeField] private float enemyRandSpawnRateMin = 10;
+    
+    public static EntitySpawner Instance { get; private set; }
     public event ES_SpawnPlayer OnSpawnPlayer;
     public delegate void ES_SpawnPlayer(object sender, GameObject player);
 
@@ -30,22 +34,45 @@ public class EntitySpawner : MonoBehaviour
         }
 
         vcam = Camera.main.GetComponent<CinemachineVirtualCamera>();
+        timeSinceSpawnedLastBatchMax = 3;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (!GameManager.Instance.GameHasStarted) return;
+
+        timeSinceSpawnedLastBatch += Time.deltaTime;
+
+        if (timeSinceSpawnedLastBatch > timeSinceSpawnedLastBatchMax)
         {
-            SpawnEnemy(enemies[Random.Range(0, enemies.Length)]);
+            SpawnEnemyBatch();
         }
     }
 
-    public void SpawnEnemy(GameObject enemy)
+
+    private void SpawnEnemyBatch()
     {
-        var enemyInst = Instantiate(enemy, new Vector2(UnityEngine.Random.Range(-5, 5),UnityEngine.Random.Range(-5, 5)), Quaternion.identity);
+        timeSinceSpawnedLastBatchMax = Random.Range(enemyRandSpawnRateMin, enemyRandSpawnRateMax);
+        
+        //Customize this
+        int amount = Random.Range(1, 5);
+        
+        for (int i = 0; i < amount; i++)
+        {
+            SpawnEnemy(enemies[Random.Range(0, enemies.Length)], new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(1f, 13f));
+        }
+        
+        timeSinceSpawnedLastBatch = 0;
+    }
+    
+    public Enemy SpawnEnemy(GameObject enemy, Vector2 position)
+    {
+        var enemyInst = Instantiate(enemy, position, Quaternion.identity);
         var effectInst = Instantiate(spawnEffect, enemyInst.transform.position, Quaternion.identity);
         spawnSound.Play(null, enemy.transform.position);
         Destroy(effectInst, 2f);
+        
+        return enemyInst.GetComponent<Enemy>();
     }
     
     public GameObject SpawnPlayer()

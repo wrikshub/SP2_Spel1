@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private DeathCanvas dCanvas;
     [SerializeField] private GameObject heartCanvas;
     [SerializeField] private GameObject scoreCanvas;
+    public bool GameHasStarted { get; private set;}
 
     private void Awake()
     {
@@ -42,11 +44,23 @@ public class GameManager : MonoBehaviour
         animator.SetTrigger(animParam);
     }
 
-    public void Quit()
+    public void FadeOut()
     {
         animator.SetTrigger("quit");
     }
 
+    public void ReloadScene()
+    {
+        animator.SetTrigger("reload");
+    }
+
+    private void ReloadGame()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        print("hi");
+        SceneManager.LoadScene(currentScene.buildIndex);
+    }
+    
     private void ExitGame()
     {
         Application.Quit();
@@ -61,9 +75,17 @@ public class GameManager : MonoBehaviour
 
     private void GameOver(object sender, DamageArgs damageargs)
     {
+        MusicManager.Instance.GameOver();
         player.GetComponent<Health>().OnNoHealth -= GameOver; 
         dCanvas.GameOver(timeSpentAlive, ScoreManager.Instance.Score);
+        GameHasStarted = false;
         heartCanvas.SetActive(false);
         scoreCanvas.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        GameHasStarted = true;
+        MusicManager.Instance.GameStarted();
     }
 }

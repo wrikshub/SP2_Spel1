@@ -9,6 +9,7 @@ public class DamageArgs : EventArgs
     public int amount;
     public float knockback;
     public Vector2 pos;
+    public Entity wasHarmed;
 }
 
 public class Health : MonoBehaviour

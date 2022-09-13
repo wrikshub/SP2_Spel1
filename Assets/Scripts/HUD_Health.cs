@@ -60,10 +60,7 @@ public class HUD_Health : MonoBehaviour
     private void Update()
     {
         if (!playerHasSpawned) return;
-        
-        if(Input.GetKeyDown(KeyCode.L))
-            OnTakeDamage(null, null);
-        
+
         currentTimer += Time.deltaTime;
         
         if (timesSpawnedIndex < lives && currentTimer >= spawnTimer)

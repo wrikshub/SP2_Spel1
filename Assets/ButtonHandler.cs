@@ -24,6 +24,11 @@ public class ButtonHandler : MonoBehaviour
 
     public void StartLeaveGame()
     {
-        GameManager.Instance.Quit();
+        GameManager.Instance.FadeOut();
+    }
+
+    public void StartReloadGame()
+    {
+        GameManager.Instance.ReloadScene();
     }
 }
