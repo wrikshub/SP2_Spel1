@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dd8d52ce903bb41ab54e2100cfb061, type: 3}
+  m_Name: Goblin Names 1
+  m_EditorClassIdentifier: 
+  names:
+  - Ronkos
+  - Glumbo
+  - Augh
+  - Flonky
+  - Chungus
+  - Pumba
+  - Bimso
+  - Bamba
+  - Salman
+  - Walter Blanco
+  - Genma
+  - Rimplump

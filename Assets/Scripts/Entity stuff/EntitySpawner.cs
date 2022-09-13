@@ -48,7 +48,7 @@ public class EntitySpawner : MonoBehaviour
         Destroy(effectInst, 2f);
     }
     
-    public void SpawnPlayer()
+    public GameObject SpawnPlayer()
     {
         var playerInst = Instantiate(player, spawnpoint.position, spawnpoint.rotation);
         OnSpawnPlayer?.Invoke(this, playerInst);
@@ -58,6 +58,8 @@ public class EntitySpawner : MonoBehaviour
         vcam.Follow = playerInst.transform;
         playerInst.GetComponent<Health>().MakeInvincible(playerTimeInvicible);
         //pCont.FreezeEntity(true);
+
+        return playerInst;
     }
 
     private void UnFreezePlayer(PlayerController playerController)

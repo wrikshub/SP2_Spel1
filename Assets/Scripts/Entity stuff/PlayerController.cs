@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerController : Entity
@@ -21,6 +22,12 @@ public class PlayerController : Entity
     private void Start()
     {
         FreezeEntity(false);
+        health.OnNoHealth += PlayerDeath;
+    }
+
+    private void OnDisable()
+    {
+        health.OnNoHealth -= PlayerDeath;
     }
 
     private void Update()
@@ -60,8 +67,9 @@ public class PlayerController : Entity
         }
     }
 
-    private void PowerPlayer()
+    private void PlayerDeath(object sender, DamageArgs d)
     {
-        
+        Camera.main.GetComponent<CinemachineVirtualCamera>().Follow = d.damagedByWho.transform;
+        Destroy(gameObject);
     }
 }

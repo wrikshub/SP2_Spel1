@@ -59,9 +59,15 @@ public class Health : MonoBehaviour
         {
             OnNoHealth?.Invoke(this, lastDamageArgs);
             Dead = true;
+            Kill(d);
         }
     }
 
+    public virtual void Kill(DamageArgs d)
+    {
+        print("killed :(");
+    }
+    
     private void Update()
     {
         invincibleTimer += Time.deltaTime;

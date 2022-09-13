@@ -9902,7 +9902,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff85eb7e4aad8e748a517f4c4a30d2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityName: Player
+  nameHolder: {fileID: 0}
+  nameText: {fileID: 0}
+  nList: {fileID: 11400000, guid: c793745c1e0539448a2b42733ae2ab67, type: 2}
   hostile: 0
   hurtEffect: {fileID: 8820006445289908465, guid: fa837851b72dd264dae40eda8138af19, type: 3}
   rbod: {fileID: 8693476047509913074}
@@ -9946,7 +9948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8439cd21aa7be614e876a7a15bcaefc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: 5
+  CurrentHealth: 2
   invincibleTimerMax: 5
 --- !u!114 &8693476047509913079
 MonoBehaviour:

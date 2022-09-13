@@ -48,7 +48,7 @@ public class EnemyControl : MonoBehaviour
         {
             var health = collider.GetComponent<Health>();
             collider.GetComponent<Entity>()
-                .ApplyKnockback((collider.transform.position - transform.position).normalized, enemy.knockbackOnTouch);
+                .ApplyKnockbackVel((collider.transform.position - transform.position).normalized, enemy.knockbackOnTouch);
             
             health.TakeDamage(new DamageArgs()
             {

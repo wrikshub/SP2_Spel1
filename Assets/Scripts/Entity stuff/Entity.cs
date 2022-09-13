@@ -1,13 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Entity : MonoBehaviour
 {
-    [SerializeField] private string entityName = "Bob Odenkirk";
+    private string entityName = "Bob Odenkirk";
+    public GameObject nameHolder = null;
+    public TextMeshProUGUI nameText = null;
+    [SerializeField] private NameList nList;
     [SerializeField] public bool hostile = true;
     [SerializeField] private GameObject hurtEffect = null;
 
@@ -20,6 +24,11 @@ public class Entity : MonoBehaviour
 
     private void Start()
     {
+        if (nList != null)
+        {
+            entityName = nList.PickRandomName();
+            nameText.text = entityName;
+        }
         health.OnNoHealth += OnDeath;
         health.OnTakeDamage += OnHurt;
     }
@@ -35,7 +44,13 @@ public class Entity : MonoBehaviour
         if(!health.Invincible)
             rbod.AddForce(dir * amount, ForceMode2D.Impulse);
     }
-
+    
+    public void ApplyKnockbackVel(Vector2 dir, float amount)
+    {
+        if(!health.Invincible)
+            rbod.velocity = (dir * amount);
+    }
+    
     public void FreezeEntity(bool freeze)
     {
         FreezeMovement = freeze;
