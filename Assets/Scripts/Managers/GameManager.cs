@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject scoreCanvas;
     public bool GameHasStarted { get; private set;}
 
+    public event GameStart OnGameStart;
+    public delegate void GameStart();
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -86,6 +89,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         GameHasStarted = true;
+        OnGameStart?.Invoke();
         MusicManager.Instance.GameStarted();
     }
 }
