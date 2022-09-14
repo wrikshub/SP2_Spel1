@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Policy;
 using UnityEngine;
 
 public class Bullet : Entity
@@ -59,7 +60,10 @@ public class Bullet : Entity
         //Hit player
         if (!hit.hostile && hostile)
         {
-            health.TakeDamage(new DamageArgs
+            if (other.transform == null) return;
+            if (other.GetComponent<Health>() == null) return;
+
+            other.GetComponent<Health>().TakeDamage(new DamageArgs
                 {amount = damage, damagedByWho = shotBy, pos = shotBy.transform.position, knockback = bKnockback});
             bh.DestroyBullet(0);
         }

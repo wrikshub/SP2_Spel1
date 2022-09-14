@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
     private void ReloadGame()
     {
         Scene currentScene = SceneManager.GetActiveScene();
-        print("hi");
         SceneManager.LoadScene(currentScene.buildIndex);
     }
     

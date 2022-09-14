@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerHealth : Health
 {
     private Entity entity;
+    [SerializeField] private AudioEvent alertOnHurt;
 
     private void Start()
     {
@@ -16,8 +17,12 @@ public class PlayerHealth : Health
 
     public override void TakeDamage(DamageArgs d)
     {
-        if(!Invincible)
+        if (!Invincible)
+        {
+            alertOnHurt.Play();
             GameManager.Instance.HurtEffect();
+        }
+        
         
         entity.ApplyKnockback((d.pos - (Vector2)transform.position).normalized, d.knockback);
         base.TakeDamage(d);

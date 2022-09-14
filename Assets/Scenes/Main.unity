@@ -2645,7 +2645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609916127}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3336,7 +3336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -4771,7 +4771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -127.9, y: -63.1}
+  m_AnchoredPosition: {x: -330, y: -303}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480666902
@@ -4826,8 +4826,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11.4
-  m_fontSizeBase: 11.4
+  m_fontSize: 24.19
+  m_fontSizeBase: 24.19
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5064,10 +5064,11 @@ MonoBehaviour:
   spawnSound: {fileID: 11400000, guid: a14194defc432994a88e0d47d26dd97d, type: 2}
   enemies:
   - {fileID: 767571142475148777, guid: ad2da20e33b282748a46e5017d175f91, type: 3}
-  - {fileID: 8913842888974760696, guid: 7e6c676fb568f5c4bb38dded93fb0190, type: 3}
+  - {fileID: 767571142475148777, guid: af7df42c1d950434798d81e00578d29a, type: 3}
   - {fileID: 8913842888974760696, guid: 659e006d556ea994ba2e46273ce57f3a, type: 3}
-  enemyRandSpawnRateMax: 5
-  enemyRandSpawnRateMin: 1
+  - {fileID: 8913842888974760696, guid: 7e6c676fb568f5c4bb38dded93fb0190, type: 3}
+  enemyRandSpawnRateMax: 10
+  enemyRandSpawnRateMin: 4
 --- !u!1 &1685656034
 GameObject:
   m_ObjectHideFlags: 0
@@ -5313,7 +5314,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.334507, y: 1}
+    m_SensorSize: {x: 1.3339223, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

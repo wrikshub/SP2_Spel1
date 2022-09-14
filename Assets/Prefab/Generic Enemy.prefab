@@ -261,7 +261,7 @@ MonoBehaviour:
   rbod: {fileID: 2177820766076046685}
   health: {fileID: 2177820766076046681}
   deathSound: {fileID: 11400000, guid: ba2db223f728f354fa20bed2767d7280, type: 2}
-  damageSound: {fileID: 0}
+  damageSound: {fileID: 11400000, guid: 38ee183443711584d8efe4fa9ef1d6f4, type: 2}
   score: 150
   damageOnTouch: 1
   knockbackOnTouch: 20
@@ -349,6 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd05e7a972208b84b9c98eeecf5098ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  aimThisAtTarget: {fileID: 0}
   enemySpeed: 15
   speedlimit: 5
   hurtPlayerRadius: 0.75

@@ -19,7 +19,6 @@ public class StartCanvas : MonoBehaviour
 
     private void OnGameStart()
     {
-        print("hello");
         animator.SetTrigger("vanish");
     }
 }

@@ -9911,7 +9911,7 @@ MonoBehaviour:
   rbod: {fileID: 8693476047509913074}
   health: {fileID: 3193700608292645066}
   deathSound: {fileID: 11400000, guid: ba2db223f728f354fa20bed2767d7280, type: 2}
-  damageSound: {fileID: 0}
+  damageSound: {fileID: 11400000, guid: 3085eb8ba3335a2479ef27ee144854f1, type: 2}
   speedlimit: 4.5
   moveSpeed: 60
 --- !u!114 &8693476047509913078
@@ -9953,6 +9953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentHealth: 5
   invincibleTimerMax: 5
+  alertOnHurt: {fileID: 11400000, guid: 81142edc8db4a04478c45bb8f50233d2, type: 2}
 --- !u!114 &8693476047509913079
 MonoBehaviour:
   m_ObjectHideFlags: 0

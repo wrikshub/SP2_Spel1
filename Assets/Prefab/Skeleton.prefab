@@ -59,8 +59,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2177820766076046687, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+      propertyPath: aimThisAtTarget
+      value: 
+      objectReference: {fileID: 438923124779726557}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+--- !u!4 &438923124779726557 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1335466617832724076, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+  m_PrefabInstance: {fileID: 1486145621491245233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &767571142475148777 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2177820766076046680, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
@@ -78,3 +87,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f62fc31b67bac24cab84a354ef51b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletToFire: {fileID: 5714689806636203236, guid: bb68c5f121ee6df46979146f0993697e, type: 3}
+  fireEffect: {fileID: 2981120107317352301, guid: cb84896e4ee6e3d42ac17dc16d9835b9, type: 3}
+  fireSound: {fileID: 11400000, guid: 163b195a7217fcb45aa0c5ae9d2b9ca1, type: 2}
+  aimAtPlayer: {fileID: 9057943134907803015}
+  timeSinceFiredRandMin: 1
+  timeSinceFiredRandMax: 5
+--- !u!4 &9057943134907803015 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7578325465084118326, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+  m_PrefabInstance: {fileID: 1486145621491245233}
+  m_PrefabAsset: {fileID: 0}

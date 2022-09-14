@@ -15,6 +15,7 @@ public class IntroSpawner : MonoBehaviour
 
     private void SpawnIntroEnemy()
     {
-        EntitySpawner.Instance.SpawnEnemy(introEnemy, Vector3.right * 3.5f);
+        var enemy = EntitySpawner.Instance.SpawnEnemy(introEnemy, Vector3.right * 3.5f);
+        enemy.GetComponent<EnemyControl>().Target = null;
     }
 }

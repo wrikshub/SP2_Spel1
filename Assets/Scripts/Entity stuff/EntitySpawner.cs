@@ -55,7 +55,7 @@ public class EntitySpawner : MonoBehaviour
         timeSinceSpawnedLastBatchMax = Random.Range(enemyRandSpawnRateMin, enemyRandSpawnRateMax);
         
         //Customize this
-        int amount = Random.Range(1, 5);
+        int amount = Random.Range(2, 7);
         
         for (int i = 0; i < amount; i++)
         {
@@ -71,6 +71,9 @@ public class EntitySpawner : MonoBehaviour
         var effectInst = Instantiate(spawnEffect, enemyInst.transform.position, Quaternion.identity);
         spawnSound.Play(null, enemy.transform.position);
         Destroy(effectInst, 2f);
+
+        EnemyControl e = enemyInst.GetComponent<EnemyControl>();
+        e.Target = GameObject.FindWithTag("Player").transform;
         
         return enemyInst.GetComponent<Enemy>();
     }

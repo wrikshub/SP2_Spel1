@@ -66,7 +66,7 @@ public class Health : MonoBehaviour
 
     public virtual void Kill(DamageArgs d)
     {
-        print("killed :(");
+        
     }
     
     private void Update()

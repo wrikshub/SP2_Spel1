@@ -58,8 +58,11 @@ public class Entity : MonoBehaviour
 
     private void OnHurt(object sender, DamageArgs args)
     {
+        if (hurtEffect == null) return;
+        
         var fx = Instantiate(hurtEffect, transform.position, Quaternion.identity);
         Destroy(fx, 3f);
+        damageSound.Play(transform, transform.position);
     }
 
     internal virtual void OnDeath(object sender, DamageArgs args)
@@ -67,6 +70,7 @@ public class Entity : MonoBehaviour
         FreezeMovement = true;
         deathSound.Play(null, transform.position);
         //print(this.entityName + " was killed by " + args.damagedByWho.entityName);
+        deathSound.Play(transform, transform.position);
         Destroy(gameObject);
     }
 }

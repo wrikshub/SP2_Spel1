@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5090319ff808ede408d19cd6193fbf04, type: 3}
+  m_Name: EnemyHurt
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 016655b5b9541ca4d978539af305f9ad, type: 3}
+  - {fileID: 8300000, guid: 95ef62df08b42aa4bba3db0ff122698a, type: 3}
+  - {fileID: 8300000, guid: 0120ced313436df44bf32af1dbe4c7ff, type: 3}
+  - {fileID: 8300000, guid: 259272d828fdbfb4cb62659fb6d23be4, type: 3}
+  - {fileID: 8300000, guid: 52c026e594a350d47b81334b63602f08, type: 3}
+  volume: 1
+  audioMixer: {fileID: 24100000, guid: 35b60beb7895ee84bba46896c759457d, type: 2}
+  spatialBlend: 1
+  minPitch: 0.7
+  maxPitch: 1.3
+  loop: 0
+  destroyOnFinish: 1
+  distanceFalloff: 5

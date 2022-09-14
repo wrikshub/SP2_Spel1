@@ -2,13 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyControl : MonoBehaviour
 {
     private Rigidbody2D rbod;
     private Health health;
-    private Transform target;
+    public Transform Target;
+    [SerializeField] private Transform aimThisAtTarget = null;
     private Enemy enemy;
     private Entity entity;
 
@@ -16,7 +18,10 @@ public class EnemyControl : MonoBehaviour
     [SerializeField] private float speedlimit = 5;
     [SerializeField] private float hurtPlayerRadius = 1f;
     [SerializeField] private LayerMask hurtLayer;
-    private float timeSpentLooking = 0;
+    private float timeSpentNavigatingMax = 1;
+    private float timeSpentNavigating = 0;
+    
+    private Vector2 placeToGoTo = Vector2.zero;
 
     private void Awake()
     {
@@ -33,11 +38,17 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
-        timeSpentLooking += Time.deltaTime;
+        timeSpentNavigating += Time.deltaTime;
 
         CheckforPlayer();
-
         Navigate();
+
+        if (Target == null) return;
+        if (aimThisAtTarget == null) return;
+
+        var aimDelta = (Target.position - transform.position).normalized;
+        var angle = Mathf.Atan2(aimDelta.y, aimDelta.x) * Mathf.Rad2Deg;
+        aimThisAtTarget.transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void CheckforPlayer()
@@ -65,16 +76,27 @@ public class EnemyControl : MonoBehaviour
 
     private void Navigate()
     {
-        if (target)
+        if (Target)
         {
-            GoToThisPlace(target.position);
+            GoToThisPlace(Target.position);
         }
         else
         {
-            GoToThisPlace(Vector2.zero);
+            GoToThisPlace(FindRandomPlaceToGoTo(11));
         }
     }
 
+    private Vector2 FindRandomPlaceToGoTo(int bounds)
+    {
+        if (timeSpentNavigating < timeSpentNavigatingMax) return placeToGoTo;
+        
+        timeSpentNavigating = 0;
+        timeSpentNavigatingMax = Random.Range(1, 5);
+        Vector2 place = new Vector2(Random.Range(-bounds, bounds), Random.Range(-bounds, bounds));
+        placeToGoTo = place;
+        return place;
+    }
+    
     private void GoToThisPlace(Vector2 coords)
     {
         var dir = ((Vector3) coords - transform.position).normalized;
@@ -99,7 +121,7 @@ public class EnemyControl : MonoBehaviour
 
     private void SetTarget(DamageArgs args)
     {
-        timeSpentLooking = 0;
-        target = args.damagedByWho.transform;
+        timeSpentNavigating = 0;
+        Target = args.damagedByWho.transform;
     }
 }
