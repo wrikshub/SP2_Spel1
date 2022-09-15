@@ -5067,6 +5067,7 @@ MonoBehaviour:
   - {fileID: 767571142475148777, guid: af7df42c1d950434798d81e00578d29a, type: 3}
   - {fileID: 8913842888974760696, guid: 659e006d556ea994ba2e46273ce57f3a, type: 3}
   - {fileID: 8913842888974760696, guid: 7e6c676fb568f5c4bb38dded93fb0190, type: 3}
+  - {fileID: 8913842888974760696, guid: 1f8ead5b96f42804fa8ce31e89d672a8, type: 3}
   enemyRandSpawnRateMax: 10
   enemyRandSpawnRateMin: 4
 --- !u!1 &1685656034
@@ -5314,7 +5315,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3339223, y: 1}
+    m_SensorSize: {x: 1.334507, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
