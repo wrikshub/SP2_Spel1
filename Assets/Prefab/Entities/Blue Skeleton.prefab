@@ -28,6 +28,10 @@ PrefabInstance:
       value: Goblin
       objectReference: {fileID: 0}
     - target: {fileID: 2177820766076046682, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 1740990927213167447, guid: 7b6291377eca6514092ea85b10ca0af6, type: 3}
+    - target: {fileID: 2177820766076046682, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
       propertyPath: knockbackOnTouch
       value: 5
       objectReference: {fileID: 0}

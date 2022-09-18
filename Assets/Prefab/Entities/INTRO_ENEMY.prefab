@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: entityName
       value: Goblin
       objectReference: {fileID: 0}
+    - target: {fileID: 2177820766076046682, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 943720482084888373, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
     - target: {fileID: 2177820766076046683, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
       propertyPath: m_RootOrder
       value: 0

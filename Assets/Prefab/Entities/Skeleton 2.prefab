@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: score
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 2177820766076046682, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
+      propertyPath: deathEffect
+      value: 
+      objectReference: {fileID: 1740990927213167447, guid: 87a43d0896145b947ab1ded1b3e6f30c, type: 3}
     - target: {fileID: 2177820766076046683, guid: 119fd0b7c39a25842b3b9c57d78fa0fb, type: 3}
       propertyPath: m_RootOrder
       value: 0

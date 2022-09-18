@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1527277457241414754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 943720480990534735, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: UVModule.sprites.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720480990534735, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720480990534735, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.11238872
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720480990534735, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.11238872
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720480990534735, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.7735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720480990534735, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1cb86e65499f8f4591de7e198384946, type: 3}
+    - target: {fileID: 943720482084888373, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_Name
+      value: DeathEffect Bones Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943720482084888374, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}

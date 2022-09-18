@@ -9908,6 +9908,7 @@ MonoBehaviour:
   nList: {fileID: 11400000, guid: c793745c1e0539448a2b42733ae2ab67, type: 2}
   hostile: 0
   hurtEffect: {fileID: 8820006445289908465, guid: fa837851b72dd264dae40eda8138af19, type: 3}
+  deathEffect: {fileID: 943720482084888373, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
   rbod: {fileID: 8693476047509913074}
   health: {fileID: 3193700608292645066}
   deathSound: {fileID: 11400000, guid: ba2db223f728f354fa20bed2767d7280, type: 2}
@@ -9936,9 +9937,9 @@ MonoBehaviour:
   impulse: {fileID: 293519800941000577}
   cameraShakeAmount: 0.75
   dirDamp: 0.157
-  cameraZoomDamp: 0.179
-  lookDamp: 0.077
-  cameraZoomAmount: 1.43
+  cameraZoomDamp: 0.268
+  lookDamp: 0.089
+  cameraZoomAmount: 2.5
 --- !u!114 &3193700608292645066
 MonoBehaviour:
   m_ObjectHideFlags: 0

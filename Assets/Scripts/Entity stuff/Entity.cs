@@ -14,6 +14,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private NameList nList;
     [SerializeField] public bool hostile = true;
     [SerializeField] private GameObject hurtEffect = null;
+    [SerializeField] private GameObject deathEffect = null;
 
     [SerializeField] protected Rigidbody2D rbod;
     [SerializeField] protected Health health;
@@ -70,6 +71,10 @@ public class Entity : MonoBehaviour
         FreezeMovement = true;
         deathSound.Play(null, transform.position);
         //print(this.entityName + " was killed by " + args.damagedByWho.entityName);
+
+        var a =Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(a, 5);
+        
         deathSound.Play(transform, transform.position);
         Destroy(gameObject);
     }
