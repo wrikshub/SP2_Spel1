@@ -65,7 +65,7 @@ public class PlayerVisual : MonoBehaviour
     {
         camZoomCurrent = Mathf.SmoothDamp(camZoomCurrent, pCont.PSpeedRatio * cameraZoomAmount, ref cameraZoomVel,
             cameraZoomDamp);
-        cCont.SetCameraZoom(Mathf.Clamp(camZoomCurrent + originalSize, 0, 7.5f));
+        cCont.SetCameraZoom(Mathf.Clamp(camZoomCurrent + originalSize, 0, 25f));
     }
 
     private void RotatePlayerVisual()

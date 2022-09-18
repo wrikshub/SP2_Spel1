@@ -258,6 +258,7 @@ MonoBehaviour:
   nList: {fileID: 11400000, guid: fbc1c7caae2c67641b2fd6207d36e49a, type: 2}
   hostile: 1
   hurtEffect: {fileID: 8820006445289908465, guid: fa837851b72dd264dae40eda8138af19, type: 3}
+  deathEffect: {fileID: 943720482084888373, guid: eb3528471efe43546b30dee8f4ca9882, type: 3}
   rbod: {fileID: 2177820766076046685}
   health: {fileID: 2177820766076046681}
   deathSound: {fileID: 11400000, guid: ba2db223f728f354fa20bed2767d7280, type: 2}
